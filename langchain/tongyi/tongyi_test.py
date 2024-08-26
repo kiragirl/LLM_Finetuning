@@ -1,4 +1,5 @@
-from prompt_parser_utils import *
+from L1_prompt_parser_test import *
+from L2_memory_test import *
 from dotenv import load_dotenv, find_dotenv
 
 _ = load_dotenv(find_dotenv())
@@ -29,4 +30,6 @@ text: ```{customer_email}```
 
 # langchain_chat()
 # get_information()
-get_structured_output()
+#get_structured_output()
+#test_conversation_buffer_memory()
+test_conversation_summary_memory()

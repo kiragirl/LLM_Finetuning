@@ -1,5 +1,4 @@
 import os
-import openai
 from openai import OpenAI
 from langchain_community.chat_models import ChatTongyi
 from langchain.prompts import ChatPromptTemplate
@@ -82,7 +81,6 @@ def get_information():
     """
     prompt_template = ChatPromptTemplate.from_template(review_template)
     messages = prompt_template.format_messages(text=customer_review)
-    os.environ["DASHSCOPE_API_KEY"] = key
     chat = ChatTongyi()
     response = chat.invoke(messages)
     print(type(response.content))
