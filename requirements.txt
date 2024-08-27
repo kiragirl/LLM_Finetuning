@@ -1,0 +1,12 @@
+setuptools~=72.1.0
+python-dotenv~=1.0.1
+langchain~=0.2.14
+pandas~=2.2.2
+openai~=1.42.0
+modelscope~=1.17.1
+requests~=2.32.3
+transformers~=4.41.2
+huggingface_hub~=0.24.5
+datasets~=2.14.6
+yaml~=0.2.5
+pyyaml~=6.0.1

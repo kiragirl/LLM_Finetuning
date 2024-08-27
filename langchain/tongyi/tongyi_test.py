@@ -1,5 +1,6 @@
 from L1_prompt_parser_test import *
 from L2_memory_test import *
+from L3_chains_test import *
 from dotenv import load_dotenv, find_dotenv
 
 _ = load_dotenv(find_dotenv())
@@ -32,4 +33,7 @@ text: ```{customer_email}```
 # get_information()
 #get_structured_output()
 #test_conversation_buffer_memory()
-test_conversation_summary_memory()
+#test_conversation_summary_memory()
+#simple_sequential_test()
+#sequential_test()
+router_test()
