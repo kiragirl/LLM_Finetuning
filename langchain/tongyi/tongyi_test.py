@@ -2,6 +2,7 @@ from L1_prompt_parser_test import *
 from L2_memory_test import *
 from L3_chains_test import *
 from L4_QnA_test import *
+from L6_agent_test import *
 from dotenv import load_dotenv, find_dotenv
 
 _ = load_dotenv(find_dotenv())
@@ -32,13 +33,15 @@ text: ```{customer_email}```
 
 # langchain_chat()
 # get_information()
-#get_structured_output()
-#test_conversation_buffer_memory()
-#test_conversation_summary_memory()
-#simple_sequential_test()
-#sequential_test()
-#router_test()
-#vector_test()
-#store_vector_test()
-#query_vector_chroma_test()
-vector_retrival_test()
+# get_structured_output()
+# test_conversation_buffer_memory()
+# test_conversation_summary_memory()
+# simple_sequential_test()
+# sequential_test()
+# router_test()
+# vector_test()
+# store_vector_test()
+# query_vector_chroma_test()
+# vector_retrival_test()
+# tool_test()
+customize_tool()

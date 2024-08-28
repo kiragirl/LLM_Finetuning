@@ -1,10 +1,10 @@
-from langchain.document_loaders import CSVLoader
-from langchain.vectorstores import DocArrayInMemorySearch
+from langchain_community.document_loaders import CSVLoader
+from langchain_community.vectorstores import DocArrayInMemorySearch
 from langchain_community.chat_models import ChatTongyi
 from langchain.indexes import VectorstoreIndexCreator
 from langchain_community.embeddings import DashScopeEmbeddings
-from langchain.vectorstores import Chroma
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain_community.embeddings import HuggingFaceEmbeddings
 import pandas as pd
 import time
 from langchain.chains import RetrievalQA
