@@ -5,9 +5,6 @@ import requests
 import os
 import torch
 
-os.environ['http_proxy'] = 'http://dalian-webproxy.openjawtech.com:3128'
-os.environ['https_proxy'] = 'http://dalian-webproxy.openjawtech.com:3128'
-
 model_name = "EleutherAI/pythia-70m"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 base_model = AutoModelForCausalLM.from_pretrained(model_name)

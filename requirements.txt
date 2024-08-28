@@ -10,3 +10,4 @@ huggingface_hub~=0.24.5
 datasets~=2.14.6
 yaml~=0.2.5
 pyyaml~=6.0.1
+ipython~=8.26.0

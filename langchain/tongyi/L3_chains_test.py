@@ -6,6 +6,8 @@ from langchain.chains.router import MultiPromptChain
 from langchain.chains.router.llm_router import LLMRouterChain, RouterOutputParser
 from langchain.prompts import PromptTemplate
 from langchain_community.chat_models import ChatTongyi
+
+
 def simple_sequential_test():
     llm = ChatTongyi()
     first_prompt = ChatPromptTemplate.from_template(
@@ -23,6 +25,7 @@ def simple_sequential_test():
                                                  )
     product = "Queen Size Sheet Set"
     print(overall_simple_chain.invoke(product))
+
 
 def sequential_test():
     llm = ChatTongyi()
@@ -69,11 +72,12 @@ def sequential_test():
     overall_chain = SequentialChain(
         chains=[chain_one, chain_two, chain_three, chain_four],
         input_variables=["Review"],
-        output_variables=["English_Review", "summary","language", "followup_message"],
+        output_variables=["English_Review", "summary", "language", "followup_message"],
         verbose=True
     )
 
     print(overall_chain.invoke("肉给的很多，鸡肉特别嫩，很入味，不柴，好吃，菜也特别多，米饭很香，好评好评"))
+
 
 def router_test():
     physics_template = """You are a very smart physics professor. \
@@ -200,9 +204,9 @@ def router_test():
     )
     router_chain = LLMRouterChain.from_llm(llm, router_prompt)
     chain = VerifiedMultiPromptChain(router_chain=router_chain,
-                             destination_chains=destination_chains,
-                             default_chain=default_chain, verbose=True
-                             )
+                                     destination_chains=destination_chains,
+                                     default_chain=default_chain, verbose=True
+                                     )
     print(chain.run("What is black body radiation?"))
     print(chain.run("what is 2 + 2"))
     print(chain.run("Why does every cell in our body contain DNA?"))

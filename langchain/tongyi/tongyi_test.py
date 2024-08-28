@@ -1,8 +1,11 @@
 from L1_prompt_parser_test import *
 from L2_memory_test import *
 from L3_chains_test import *
+from L4_QnA_test import *
 from dotenv import load_dotenv, find_dotenv
 
+os.environ['http_proxy'] = 'http://dalian-webproxy.openjawtech.com:3128'
+os.environ['https_proxy'] = 'http://dalian-webproxy.openjawtech.com:3128'
 _ = load_dotenv(find_dotenv())
 llm_model = "qwen-turbo"
 print(os.environ["DASHSCOPE_API_KEY"])
@@ -36,4 +39,8 @@ text: ```{customer_email}```
 #test_conversation_summary_memory()
 #simple_sequential_test()
 #sequential_test()
-router_test()
+#router_test()
+#vector_test()
+#store_vector_test()
+#query_vector_chroma_test()
+vector_retrival_test()
