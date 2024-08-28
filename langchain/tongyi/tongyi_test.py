@@ -4,8 +4,6 @@ from L3_chains_test import *
 from L4_QnA_test import *
 from dotenv import load_dotenv, find_dotenv
 
-os.environ['http_proxy'] = 'http://dalian-webproxy.openjawtech.com:3128'
-os.environ['https_proxy'] = 'http://dalian-webproxy.openjawtech.com:3128'
 _ = load_dotenv(find_dotenv())
 llm_model = "qwen-turbo"
 print(os.environ["DASHSCOPE_API_KEY"])
