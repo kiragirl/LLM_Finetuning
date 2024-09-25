@@ -1,12 +1,14 @@
 from config import Config
-from flask import Flask, request, jsonify
+from flask import Flask, request, current_app
 
 from prompt import Prompt
+from rag import RAG
 import os
 from dotenv import load_dotenv, find_dotenv
-
+from langchain_huggingface import HuggingFaceEmbeddings
 from web.chat_request_message import ChatRequestMessage
 from web.chat_response_message import ChatResponseMessage
+import time
 
 app = Flask(__name__)
 _ = load_dotenv(find_dotenv())
@@ -29,11 +31,24 @@ def comment_analysis():
     return get_response(request.get_json(), Prompt.comment_analysis)
 
 
+@app.route('/chat/rag', methods=['POST'])
+def comment_rag():
+    return get_response(request.get_json(), RAG.retrieval_augmented_generation)
+
+
 def get_response(request_json, func):
     message = ChatRequestMessage(**request_json)
     response = ChatResponseMessage(func(message.context))
     return response.to_json()
 
 
+def load_embeddings():
+    start_time = time.time()
+    app.config['embeddings'] = HuggingFaceEmbeddings()
+    end_time = time.time()
+    print(f"Load embedding took {end_time - start_time:.2f} seconds.")
+
+
 if __name__ == '__main__':
+    load_embeddings()
     app.run(port=app.config['PORT'])
