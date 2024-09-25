@@ -6,17 +6,23 @@ from rag import RAG
 from dotenv import load_dotenv, find_dotenv
 
 
-def store_vector(path: str):
+def store_file(path: str):
+    with open(path, "r", encoding="utf-8") as file:
+        text = file.read()
+    store_vector(path, text)
+
+
+def store_pdf(path: str):
     text = PDFUtil.extract_text_from_pdf(path)
-    # chunks = PDFUtil.split_into_chunks(text)
+    store_vector(path, text)
+
+
+def store_vector(path: str, text: str):
     chunks = [text]
     embedding_function = HuggingFaceEmbeddings()
-    # embeddings = embedding_function.embed_documents(chunks)
     persist_directory = 'pdf_chroma_db'
-    # 创建或连接到一个 Chroma 数据库
     chroma_client = Chroma(persist_directory=persist_directory, embedding_function=embedding_function)
-    metadata = [{"fileName":path}]
-    # 将提取的文本转换为向量，并将元数据一起添加到Chroma数据库中
+    metadata = [{"fileName": path}]
     chroma_client.add_texts(chunks, metadatas=metadata)
 
 
@@ -48,7 +54,6 @@ def query_vector_chroma_test(query: str, persist_directory: str):
         print("-----")
 
 
-#store_vector("yiming.pdf")
+#store_file("../readme.md")
 #query_vector_chroma_test("李一明有几年工作经验", "pdf_chroma_db")
-_ = load_dotenv(find_dotenv())
-RAG.retrieval_augmented_generation("李一明有几年工作经验")
+query_vector_chroma_test("大模型实践Demo", "pdf_chroma_db")
