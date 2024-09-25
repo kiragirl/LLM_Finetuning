@@ -1,6 +1,6 @@
 from config import Config
 from flask import Flask, request, current_app
-
+from flask_swagger_ui import get_swaggerui_blueprint
 from prompt import Prompt
 from rag import RAG
 import os
@@ -48,6 +48,21 @@ def load_embeddings():
     end_time = time.time()
     print(f"Load embedding took {end_time - start_time:.2f} seconds.")
 
+
+# Swagger UI 配置
+SWAGGER_URL = '/api/docs'  # 访问 Swagger UI 的 URL
+API_URL = '/static/swagger.yaml'  # Swagger YAML 文件的 URL
+
+# Swagger UI 蓝图
+swagger_ui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,
+    API_URL,
+    config={
+        'app_name': "LLM DEMO"
+    }
+)
+
+app.register_blueprint(swagger_ui_blueprint, url_prefix=SWAGGER_URL)
 
 if __name__ == '__main__':
     load_embeddings()

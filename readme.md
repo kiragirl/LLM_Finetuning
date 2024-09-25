@@ -10,6 +10,8 @@
 | langchain  |    使用langchain做RAG测试    |
 |   prompt   |    提示词课程jupyter book    |
 |    web     | python web，大模型RAG演示demo |
+| web/static |          静态文件包          |
 
 -------------------
+
 Don't worry about it ! :smile:

@@ -1,0 +1,74 @@
+openapi: 3.0.2
+info:
+  title: Chat API
+  version: 1.0
+  description: A LLM Application Demo.
+paths:
+  /chat/acg:
+    post:
+      tags:
+        - Chat
+      summary: Get response in ACG tone
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+  /chat/commentAnalysis:
+    post:
+      tags:
+        - Chat
+      summary: Get comment analysis
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+  /chat/rag:
+    post:
+      tags:
+        - Chat
+      summary: Get response with RAG
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+components:
+  schemas:
+    ChatRequest:
+      type: object
+      properties:
+        message:
+          type: string
+          description: The message to be processed
+    ChatResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: The generated response
