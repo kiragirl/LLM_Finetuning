@@ -1,5 +1,7 @@
 class ChatModelParam:
-    LLM_MODEL_NAME = "qwen-turbo"
+    LLM_MODEL_NAME = "qwen-turbo-latest"
+    #LLM_MODEL_NAME = "qwen-max-latest"
+
 
 
 class DBParam:
