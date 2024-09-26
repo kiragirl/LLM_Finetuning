@@ -10,6 +10,8 @@ from web.chat_request_message import ChatRequestMessage
 from web.chat_response_message import ChatResponseMessage
 import time
 
+from web.record_info import RecordInfo
+
 app = Flask(__name__)
 _ = load_dotenv(find_dotenv())
 app.config['PORT'] = Config.PORT
@@ -34,6 +36,11 @@ def comment_analysis():
 @app.route('/chat/rag', methods=['POST'])
 def comment_rag():
     return get_response(request.get_json(), RAG.retrieval_augmented_generation)
+
+
+@app.route('/private/store', methods=['POST'])
+def private_store():
+    return get_response(request.get_json(), RecordInfo.record_personal_info)
 
 
 def get_response(request_json, func):

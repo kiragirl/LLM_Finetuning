@@ -58,6 +58,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ChatResponse'
+    /private/store:
+      post:
+        tags:
+          - Private
+        summary: Store private info
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatRequest'
+          required: true
+        responses:
+          '200':
+            description: Successful response
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ChatResponse'
 components:
   schemas:
     ChatRequest:

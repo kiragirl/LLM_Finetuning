@@ -13,7 +13,7 @@ class RAG:
     def retrieval_augmented_generation(query: str) -> str:
         start_time = time.time()
         embedding_function = current_app.config['embeddings']
-        chroma_client = Chroma(persist_directory=DBParam.name, embedding_function=embedding_function)
+        chroma_client = Chroma(persist_directory=DBParam.file_db_name, embedding_function=embedding_function)
         retriever = chroma_client.as_retriever()
         llm = ChatTongyi(model=ChatModelParam.LLM_MODEL_NAME)
         qa_stuff = RetrievalQA.from_chain_type(

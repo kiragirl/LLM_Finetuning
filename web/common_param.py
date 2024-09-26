@@ -3,4 +3,5 @@ class ChatModelParam:
 
 
 class DBParam:
-    name = "pdf_chroma_db"
+    file_db_name = "pdf_chroma_db"
+    private_agent_db_name = "private_agent_db"

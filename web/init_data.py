@@ -1,9 +1,7 @@
-from pdf_util import PDFUtil
+from web.util.pdf_util import PDFUtil
 import time
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
-from rag import RAG
-from dotenv import load_dotenv, find_dotenv
 
 
 def store_file(path: str):
