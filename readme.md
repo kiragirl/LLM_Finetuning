@@ -4,13 +4,14 @@
 
 ------------------
 ## 包结构
-|     目录     |           说明            |
-|:----------:|:-----------------------:|
-| finetuning |         大模型微调微调         |
-| langchain  |    使用langchain做RAG测试    |
-|   prompt   |    提示词课程jupyter book    |
-|    web     | python web，大模型RAG演示demo |
-| web/static |          静态文件包          |
+|     目录      |           说明            |
+|:-----------:|:-----------------------:|
+| compression |          模型压缩           |
+| finetuning  |          大模型微调          |
+|  langchain  |    使用langchain做RAG测试    |
+|   prompt    |    提示词课程jupyter book    |
+|     web     | python web，大模型RAG演示demo |
+| web/static  |          静态文件包          |
 
 -------------------
 
