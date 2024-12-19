@@ -54,7 +54,7 @@ def train_linear_model():
                   metrics=['accuracy'])
 
     # 训练模型
-    history = model.fit(X_train, y_train, epochs=200, batch_size=16, validation_split=0.2, verbose=1)
+    history = model.fit(X_train, y_train, epochs=100, batch_size=16, validation_split=0.2, verbose=1)
 
     # 评估模型
     loss, accuracy = model.evaluate(X_test, y_test, verbose=0)
