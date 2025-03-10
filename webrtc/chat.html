@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebRTC Text Chat</title>
+    <style>
+        #messages { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+        #messageForm { display: flex; }
+        #messageInput { flex: 1; padding: 5px; }
+        #sendButton { padding: 5px 10px; }
+        #startButton { padding: 5px 10px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>WebRTC Text Chat</h1>
+    <button id="startButton">Start</button>
+    <div id="messages"></div>
+    <form id="messageForm">
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button type="submit" id="sendButton">Send</button>
+    </form>
+
+    <!-- 将 <script> 标签放在 HTML 文件的底部 -->
+    <script src="webrtc-chat.js"></script>
+</body>
+</html>

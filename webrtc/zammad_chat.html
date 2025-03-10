@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h1>Zammad Chat</h1>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<button class="open-zammad-chat">Chat with us</button>
+
+<script src="https://yiming.zammad.com/assets/chat/chat.min.js"></script>
+<script>
+$(function() {
+  new ZammadChat({
+    fontSize: '12px',
+    chatId: 1,
+    show: true,
+    debug: true
+  });
+});
+</script>
+</body>
+</html>
