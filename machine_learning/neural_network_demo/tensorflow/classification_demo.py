@@ -52,6 +52,10 @@ def train_linear_model():
     model.add(Dense(3, activation='linear'))
     model.compile(optimizer='adam', loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                   metrics=['accuracy'])
+    # 10*4+10
+    # 10*10+10
+    # 10*3+3
+    model.summary()
 
     # 训练模型
     history = model.fit(X_train, y_train, epochs=100, batch_size=16, validation_split=0.2, verbose=1)
