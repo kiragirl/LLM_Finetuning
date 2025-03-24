@@ -12,12 +12,12 @@ _ = load_dotenv(find_dotenv())
 llm_model = "qwen-turbo"
 print(os.environ["DASHSCOPE_API_KEY"])
 
+
 class State(TypedDict):
     messages: Annotated[list, add_messages]
 
 
 graph_builder = StateGraph(State)
-
 
 llm = ChatTongyi(model="qwen-turbo-latest")
 

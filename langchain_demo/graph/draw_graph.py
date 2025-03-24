@@ -2,7 +2,7 @@ from IPython.display import Image, display
 import matplotlib.pyplot as plt
 from PIL import Image
 
-from graph_chatbot import *
+from graph_demo import *
 
 
 # jupyter 交互式环境查看图片
@@ -26,4 +26,4 @@ def draw_graph2(graph):
     plt.show()
 
 
-draw_graph2(graph)
+draw_graph2(app)

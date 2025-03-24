@@ -49,6 +49,7 @@ def call_model(state: MessagesState):
     messages = state['messages']
     response = model.invoke(messages)
     # We return a list, because this will get added to the existing list
+    print(response)
     return {"messages": [response]}
 
 
